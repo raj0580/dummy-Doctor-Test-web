@@ -1,16 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/admin",
-      "destination": "/admin/login.html"
-    },
-    {
       "source": "/admin/:path*",
       "destination": "/admin/:path*"
     },
     {
-      "source": "/((?!customer/).*)",
-      "destination": "/customer/:1"
+      "source": "/:path*",
+      "destination": "/customer/:path*"
     }
   ]
 }
