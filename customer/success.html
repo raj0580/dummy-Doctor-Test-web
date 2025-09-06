@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Successful - Pharma Express</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Pharma Express</a>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="success-container">
+            <h2>✅ Order Placed Successfully!</h2>
+            <p>Thank you for your purchase.</p>
+            <p><strong>Order ID:</strong> <span id="order-id"></span></p>
+            <p><strong>Amount Paid:</strong> <span id="amount-paid"></span></p>
+            <p>Your order will be delivered within 3-5 business days.</p>
+            <a href="index.html" class="btn-primary">Back to Home</a>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Pharma Express. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            document.getElementById('order-id').textContent = params.get('orderId');
+            document.getElementById('amount-paid').textContent = `₹${params.get('amount')}`;
+            localStorage.clear(); // Clear cart and coupon info
+        });
+    </script>
+</body>
+</html>
