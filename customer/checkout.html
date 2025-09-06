@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Pharma Express</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Pharma Express</a>
+        </nav>
+    </header>
+    <main class="container">
+        <h2>Checkout</h2>
+        <div class="checkout-container">
+            <div class="checkout-form">
+                <h3>Shipping Information</h3>
+                <form id="checkout-form">
+                    <input type="text" id="name" placeholder="Full Name" required>
+                    <input type="email" id="email" placeholder="Email Address" required>
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                    <textarea id="address" placeholder="Full Address" rows="4" required></textarea>
+                    <button type="submit" id="pay-btn" class="btn-primary">Place Order & Pay</button>
+                </form>
+            </div>
+            <div class="order-summary-checkout">
+                <h3>Order Summary</h3>
+                <div id="summary-items"></div>
+                <hr>
+                <div class="summary-row total">
+                    <span>Total to Pay</span>
+                    <span id="summary-total-pay">₹0.00</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Pharma Express. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script type="module" src="../firebase-config.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
